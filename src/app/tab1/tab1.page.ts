@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { EmpData } from '../services/forty.services';
 import { NavController } from '@ionic/angular';
+
+import { NetworkEngineService } from '../network-engine.service';
 
 @Component({
   selector: 'app-tab1',
@@ -9,17 +10,17 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  constructor(public navCtrl:NavController, private empData:EmpData){
+  responseTxt: any;
+  constructor(public navCtrl:NavController, public network:NetworkEngineService){
 
   }
 
-  ngOnInit(){
-    this.empData.getEmployee('8705');
+  showTable(){
+    this.network.readTable().then(data =>
+      {
+        console.log("I received : " + JSON.stringify(data));
+        this.responseTxt = "" + JSON.stringify(data);
+      })
   }
 
-  getEmployee(EMPNO){
-    this.empData.getEmployee(EMPNO).subscribe(Response => {
-      console.log(Response);
-    })
-  }
 }
