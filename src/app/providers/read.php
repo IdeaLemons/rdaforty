@@ -5,10 +5,10 @@ header("Access-Control-Allow-Header: Origin, Content-Type");
 
 error_reporting(E_ALL ^ E_DEPRECATED);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_codename";
+$servername = "remotemysql.com";
+$username = "5Ea0Iz30dA";
+$password = "ScAzwQ1DYC";
+$dbname = "5Ea0Iz30dA";
 
 $connection = mysqli_connect($servername,$username,$password,$dbname);
 
