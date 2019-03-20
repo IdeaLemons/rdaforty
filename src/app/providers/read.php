@@ -5,6 +5,8 @@ header("Access-Control-Allow-Header: Origin, Content-Type");
 
 error_reporting(E_ALL ^ E_DEPRECATED);
 
+$PF_No = $_GET['pf'];
+
 $servername = "remotemysql.com";
 $username = "5Ea0Iz30dA";
 $password = "ScAzwQ1DYC";
@@ -16,7 +18,7 @@ if($connection->connect_error){
     die("Connection failed " . $connection->connect_error);
 }
 
-$result = mysqli_query($connection, 'SELECT * FROM cncities WHERE id = 4046255');
+$result = mysqli_query($connection, 'SELECT * FROM forty WHERE PF ='. $PF_No);
 
 if(mysqli_num_rows($result)>0){
     $outp = array();

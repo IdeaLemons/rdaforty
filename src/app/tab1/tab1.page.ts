@@ -11,15 +11,17 @@ import { NetworkEngineService } from '../network-engine.service';
 export class Tab1Page {
 
   responseTxt: any;
+  items: any;
   constructor(public navCtrl:NavController, public network:NetworkEngineService){
 
   }
 
   showTable(){
-    this.network.readTable().then(data =>
+    this.network.readTable(10074).then(data =>
       {
-        console.log("I received : " + JSON.stringify(data));
+        //console.log("I received : " + JSON.stringify(data));
         this.responseTxt = "" + JSON.stringify(data);
+        console.log("Printing items : " + data[0]);
       })
   }
 
