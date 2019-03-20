@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class NetworkEngineService {
    }
 
    readTable() : Promise<any>{
-     let url = "http://192.168.1.43:80/web/read.php";
+     let url = "http://192.168.8.101:80/web/read.php";
      let request = this.http.get(url);
 
      return request.toPromise();

@@ -3,11 +3,20 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Header: Origin, Content-Type");
 
-include_once ("db.connect.php");
+error_reporting(E_ALL ^ E_DEPRECATED);
 
-$sql = "SELECT * FROM employee WHERE emp_pf = 8705";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_codename";
 
-$result = mysql_query($conn, $sql);
+$connection = mysqli_connect($servername,$username,$password,$dbname);
+
+if($connection->connect_error){
+    die("Connection failed " . $connection->connect_error);
+}
+
+$result = mysqli_query($connection, 'SELECT * FROM cncities WHERE id = 4046255');
 
 if(mysqli_num_rows($result)>0){
     $outp = array();
@@ -17,6 +26,6 @@ if(mysqli_num_rows($result)>0){
     echo json_encode("0 result");
 }
 
-$conn->close();
+$connection->close();
 
 ?>
