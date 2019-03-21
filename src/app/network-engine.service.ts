@@ -11,7 +11,7 @@ export class NetworkEngineService {
    }
 
    readTable(PF) : Promise<any>{
-     let url = "http://192.168.8.100:80/web/read.php?pf=";
+     let url = "http://192.168.1.43:80/web/read.php?pf=";
      let request = this.http.get(url+PF);
 
      return request.toPromise();
