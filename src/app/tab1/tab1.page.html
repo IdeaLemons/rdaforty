@@ -1,20 +1,29 @@
-<ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>My Navigation Bar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-toolbar color="primary">
+    <ion-buttons slot="secondary">
+        <ion-button>
+          <ion-icon slot="icon-only" name="film"></ion-icon>
+        </ion-button>
+      </ion-buttons>  
+  <ion-label>ROAD DEVELOPMENT AUTHORITY</ion-label>
+</ion-toolbar>
 
-<ion-card>
-  <ion-card-header>
-    <ion-item>
-    <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-card-subtitle>{{ Name }}</ion-card-subtitle><br/>
-    <ion-card-title>{{ PF }}</ion-card-title>
-    </ion-item>
-  </ion-card-header>
-  <ion-card-content>
-  </ion-card-content>
-</ion-card>
+<ion-card class="sc-ion-card-ios-h sc-ion-card-ios-s hydrated">
+    <img src="https://i.imgur.com/xxa4Fdj.jpg">
+    <ion-card-header class="hydrated">
+      <ion-card-subtitle role="heading" aria-level="3" class="hydrated">{{ Name }}</ion-card-subtitle>
+       <ion-item>
+          <ion-card-title role="heading" aria-level="2" class="hydrated" slot="start">{{ PF }}</ion-card-title>
+         
+          <ion-badge slot="end"><h1>22</h1></ion-badge>
+        </ion-item>
+    </ion-card-header>
+    <ion-card-content class="card-content card-content-ios hydrated">
+      <ion-card-subtitle role="heading" aria-level="3" class="hydrated">{{ NIC }}</ion-card-subtitle>
+      <ion-card-subtitle role="heading" aria-level="3" class="hydrated">{{ Des }}</ion-card-subtitle>
+      <ion-card-subtitle role="heading" aria-level="3" class="hydrated">{{ Grade }}</ion-card-subtitle>
+      <ion-card-subtitle role="heading" aria-level="3" class="hydrated">{{ Div }}</ion-card-subtitle>      
+    </ion-card-content>
+  </ion-card>
 
 <ion-content padding>
   <p>Response :</p>
